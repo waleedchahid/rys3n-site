@@ -28,23 +28,28 @@
 
 <h1 class="section-title">SHOP</h1>
 
-<div class="placeholder-grid">
+<div class="product-card">
 
-<div class="placeholder-card">
-    PRODUCT COMING SOON
-</div>
+    <div class="carousel">
 
-<div class="placeholder-card">
-    PRODUCT COMING SOON
-</div>
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">
+            ❮
+        </button>
 
-<div class="placeholder-card">
-    PRODUCT COMING SOON
-</div>
+        <!-- Replace these image names with your own -->
+        <img id="RiseAboveBoxTee"
+             src="Prototypefront.jpg"
+             alt="RiseAboveBoxTee">
 
-<div class="placeholder-card">
-    PRODUCT COMING SOON
-</div>
+        <button class="carousel-btn next" onclick="changeSlide(1)">
+            ❯
+        </button>
+
+    </div>
+
+    <h2 class="product-name">Rise Above Box Tee</h2>
+
+    <p class="product-price">$40.99</p>
 
 </div>
 
@@ -53,6 +58,33 @@
 <footer>
 © 2026 RYS3N. All Rights Reserved.
 </footer>
+
+<script>
+
+const images = [
+    "Prototypefront.jpg",
+    "Prototypeback.jpg"
+];
+
+let currentSlide = 0;
+
+function changeSlide(direction) {
+
+    currentSlide += direction;
+
+    if (currentSlide < 0) {
+        currentSlide = images.length - 1;
+    }
+
+    if (currentSlide >= images.length) {
+        currentSlide = 0;
+    }
+
+    document.getElementById("product-image").src =
+        images[currentSlide];
+}
+
+</script>
 
 </body>
 </html>
